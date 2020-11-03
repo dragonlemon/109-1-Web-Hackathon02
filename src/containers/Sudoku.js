@@ -30,23 +30,79 @@ class Sudoku extends Component {
 
     handleKeyDownEvent = (event) => {
         // TODO
-
-        // Useful hints:
-        // console.log(event)
         if (this.state.gridValues !== null && this.state.selectedGrid.row_index !== -1 && this.state.selectedGrid.col_index !== -1 && (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
             if (this.state.problem.content[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index] === "0") {
                 let a = this.state.gridValues.slice();
                 a[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index]=event.key;
-                this.setState({gridValues:a});
             }
         }
+
+        let a = this.state.gridValues.slice();
+        let temp=a[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index];
+
+        let va = true;
+
+        let isj=0;
+        let isi=0;
+        for (let i = 0; i < 9; i++) {
+            isj=0;
+            for (let j = 0; j < 9; j++) {
+               if (a[i][j]===event.key) {isj++;}
+            }
+            if (isj>1) {va=false;}
+        }   
+        if (isi>1) {va=false;}
+        let isk=0;
+        for (let k=0;k<9;k++) {
+            for (let p=0;p<9;p++){
+                if (Math.floor(this.state.selectedGrid.row_index/3)===Math.floor(p/3)&&Math.floor(this.state.selectedGrid.col_index/3)===Math.floor(k/3)) {
+                    if(a[k][p]===event.key){isk++;}
+                }
+            }
+        }
+        if (isk>1) {va=false;}
+        console.log(va);
+
+        if (va===true) {this.setState({gridValues:a});}
     }
 
     handleScreenKeyboardInput = (num) => {
         // TODO
         let a = this.state.gridValues.slice();
-        a[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index]=num;
-        this.setState({gridValues:a});
+        let temp=a[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index];
+
+        if (this.state.problem.content[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index] === "0") {
+            if (num===0) {
+                a[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index]="";    
+            }else{
+                a[this.state.selectedGrid.row_index][this.state.selectedGrid.col_index]=String(num);
+            }
+        }
+
+        let va = true;
+
+        let isj=0;
+        let isi=0;
+        for (let i = 0; i < 9; i++) {
+            isj=0;
+            for (let j = 0; j < 9; j++) {
+               if (a[i][j]===String(num)) {isj++;}
+            }
+            if (isj>1) {va=false;}
+        }   
+        if (isi>1) {va=false;}
+        let isk=0;
+        for (let k=0;k<9;k++) {
+            for (let p=0;p<9;p++){
+                if (Math.floor(this.state.selectedGrid.row_index/3)===Math.floor(p/3)&&Math.floor(this.state.selectedGrid.col_index/3)===Math.floor(k/3)) {
+                    if(a[k][p]===String(num)){isk++;}
+                }
+            }
+        }
+        if (isk>1) {va=false;}
+        console.log(va);
+
+        if (va===true) {this.setState({gridValues:a});}
     }
 
     componentDidMount = () => {
