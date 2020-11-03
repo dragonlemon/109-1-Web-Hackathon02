@@ -23,6 +23,10 @@ class Grid_9x9 extends Component {
             <div className="grid_9x9" style={gridStyle}>
                 <div className="row">
                     <Grid_1x1
+                        t="transparent"
+                        b="#999"
+                        l="transparent"
+                        r="#999"
                         value={this.props.value[0]}
                         fixed={this.props.fixedValue[0] !== "0"}
                         row_index={this.props.row_offset + 0}
@@ -32,6 +36,10 @@ class Grid_9x9 extends Component {
                         conflicted={this.checkConflicted(this.props.conflicts, this.props.row_offset + 0, this.props.col_offset + 0)} />
 
                     <Grid_1x1
+                        t="transparent"
+                        b="#999"
+                        l="#999"
+                        r="#999"
                         value={this.props.value[1]}
                         fixed={this.props.fixedValue[1] !== "0"}
                         row_index={this.props.row_offset + 0}
@@ -41,6 +49,10 @@ class Grid_9x9 extends Component {
                         conflicted={this.checkConflicted(this.props.conflicts, this.props.row_offset + 0, this.props.col_offset + 1)} />
 
                     <Grid_1x1
+                        t="transparent"
+                        b="#999"
+                        l="#999"
+                        r="transparent"
                         value={this.props.value[2]}
                         fixed={this.props.fixedValue[2] !== "0"}
                         row_index={this.props.row_offset + 0}
@@ -51,6 +63,10 @@ class Grid_9x9 extends Component {
                 </div>
                 <div className="row">
                     <Grid_1x1
+                        t="#999"
+                        b="#999"
+                        l="transparent"
+                        r="#999"
                         value={this.props.value[3]}
                         fixed={this.props.fixedValue[3] !== "0"}
                         row_index={this.props.row_offset + 1}
@@ -60,6 +76,10 @@ class Grid_9x9 extends Component {
                         conflicted={this.checkConflicted(this.props.conflicts, this.props.row_offset + 1, this.props.col_offset + 0)} />
 
                     <Grid_1x1
+                        t="#999"
+                        b="#999"
+                        l="#999"
+                        r="#999"
                         value={this.props.value[4]}
                         fixed={this.props.fixedValue[4] !== "0"}
                         row_index={this.props.row_offset + 1}
@@ -69,6 +89,10 @@ class Grid_9x9 extends Component {
                         conflicted={this.checkConflicted(this.props.conflicts, this.props.row_offset + 1, this.props.col_offset + 1)} />
 
                     <Grid_1x1
+                        t="#999"
+                        b="#999"
+                        l="#999"
+                        r="transparent"
                         value={this.props.value[5]}
                         fixed={this.props.fixedValue[5] !== "0"}
                         row_index={this.props.row_offset + 1}
@@ -79,6 +103,10 @@ class Grid_9x9 extends Component {
                 </div>
                 <div className="row">
                     <Grid_1x1
+                        t="#999"
+                        b="transparent"
+                        l="transparent"
+                        r="#999"
                         value={this.props.value[6]}
                         fixed={this.props.fixedValue[6] !== "0"}
                         row_index={this.props.row_offset + 2}
@@ -88,6 +116,10 @@ class Grid_9x9 extends Component {
                         conflicted={this.checkConflicted(this.props.conflicts, this.props.row_offset + 2, this.props.col_offset + 0)} />
 
                     <Grid_1x1
+                        t="#999"
+                        b="transparent"
+                        l="#999"
+                        r="#999"
                         value={this.props.value[7]}
                         fixed={this.props.fixedValue[7] !== "0"}
                         row_index={this.props.row_offset + 2}
@@ -97,6 +129,10 @@ class Grid_9x9 extends Component {
                         conflicted={this.checkConflicted(this.props.conflicts, this.props.row_offset + 2, this.props.col_offset + 1)} />
 
                     <Grid_1x1
+                        t="#999"
+                        b="transparent"
+                        l="#999"
+                        r="transparent"
                         value={this.props.value[8]}
                         fixed={this.props.fixedValue[8] !== "0"}
                         row_index={this.props.row_offset + 2}
